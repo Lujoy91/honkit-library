@@ -1,0 +1,11 @@
+{
+  "title": "翻譯收藏庫",
+  "author": "四季",
+  "language": "zh-tw",
+  "plugins": [
+    "search-plus"
+  ],
+  "styles": {
+    "website": "css/style.css"
+  }
+}
