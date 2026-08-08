@@ -3,7 +3,7 @@
 <html lang="zh-tw" >
     <head>
         <meta charset="UTF-8">
-        <title>Gemini 對話模板 · 翻譯收藏庫</title>
+        <title>雙欄語法說明 · 翻譯收藏庫</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.2.2">
@@ -52,10 +52,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="雙欄翻譯模板.html" />
+    <link rel="next" href="範例對照.html" />
     
     
-    <link rel="prev" href="../AI研究/Gemini介紹.html" />
+    <link rel="prev" href="../模板/AI整理規則.html" />
     
 
     </head>
@@ -124,9 +124,9 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="Gemini對話模板.html">
+        <li class="chapter " data-level="3.1" data-path="../模板/Gemini對話模板.html">
             
-                <a href="Gemini對話模板.html">
+                <a href="../模板/Gemini對話模板.html">
             
                     
                     Gemini 對話模板
@@ -137,9 +137,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="雙欄翻譯模板.html">
+        <li class="chapter " data-level="3.2" data-path="../模板/雙欄翻譯模板.html">
             
-                <a href="雙欄翻譯模板.html">
+                <a href="../模板/雙欄翻譯模板.html">
             
                     
                     雙欄翻譯模板
@@ -150,9 +150,9 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="AI整理規則.html">
+        <li class="chapter " data-level="3.3" data-path="../模板/AI整理規則.html">
             
-                <a href="AI整理規則.html">
+                <a href="../模板/AI整理規則.html">
             
                     
                     AI 整理規則
@@ -170,9 +170,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../對照閱讀/如何寫雙欄.html">
+        <li class="chapter active" data-level="4.1" data-path="如何寫雙欄.html">
             
-                <a href="../對照閱讀/如何寫雙欄.html">
+                <a href="如何寫雙欄.html">
             
                     
                     雙欄語法說明
@@ -183,9 +183,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../對照閱讀/範例對照.html">
+        <li class="chapter " data-level="4.2" data-path="範例對照.html">
             
-                <a href="../對照閱讀/範例對照.html">
+                <a href="範例對照.html">
             
                     
                     範例對照
@@ -226,7 +226,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Gemini 對話模板</a>
+        <a href=".." >雙欄語法說明</a>
     </h1>
 </div>
 
@@ -244,54 +244,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="對話標題">對話標題</h1>
-<blockquote>
-<p>建立日期：</p>
-<p>來源：</p>
-<p>類型：</p>
-<p>標籤：</p>
-</blockquote>
-<hr></hr>
-<h1 id="📌-對話摘要">📌 對話摘要</h1>
-<p>（請在這裡填寫 AI 整理後的重點摘要）</p>
-<hr></hr>
-<h1 id="💬-對話內容">💬 對話內容</h1>
-<div class="chat-user">
+                                <h1 id="雙欄語法說明">雙欄語法說明</h1>
+<h2 id="基本寫法">基本寫法</h2>
+<p>在 Markdown 裡直接寫這四個註解標記就好，<strong>裡面照常寫 Markdown</strong>：</p>
+<pre><code>&lt;!--dual--&gt;
+&lt;!--src--&gt;
 
-## 👤 使用者
+English paragraph one.
 
-填寫使用者提問內容
+&lt;!--tgt--&gt;
 
-</div>
+中文第一段。
 
+&lt;!--src--&gt;
 
-<div class="chat-ai">
+English paragraph two.
 
-## 🤖 Gemini / ChatGPT
+&lt;!--tgt--&gt;
 
-填寫 AI 回覆內容
+中文第二段。
 
-</div>
-
-
-<hr></hr>
-<h1 id="🌏-原文">🌏 原文</h1>
-<p>如果是翻譯用途：</p>
-<p>放置原始語言內容。</p>
-<hr></hr>
-<h1 id="🇹🇼-中文翻譯">🇹🇼 中文翻譯</h1>
-<p>放置中文翻譯內容。</p>
-<hr></hr>
-<h1 id="📝-個人筆記">📝 個人筆記</h1>
-<p>補充：</p>
-<ul>
-<li>自己的想法</li>
-<li>後續修改方向</li>
-<li>延伸資料</li>
-</ul>
-<hr></hr>
-<h1 id="🔗-相關連結">🔗 相關連結</h1>
-<p>- </p>
+&lt;!--/dual--&gt;
+</code></pre><h2 id="自訂欄位標題">自訂欄位標題</h2>
+<p><code>&lt;!--dual 左邊標題|右邊標題--&gt;</code>，例如：</p>
+<pre><code>&lt;!--dual 🇬🇧 English|🇹🇼 中文翻譯--&gt;
+</code></pre><p>不寫的話預設是「原文 / 中文翻譯」。</p>
+<h2 id="規則">規則</h2>
+<ol>
+<li><code>&lt;!--src--&gt;</code> 和 <code>&lt;!--tgt--&gt;</code> 要<strong>成對輪流出現</strong>，一段原文配一段翻譯。</li>
+<li>每一組 src / tgt 會自成一列，左右自動對齊。段落切得越細，對齊越好讀。</li>
+<li>標記前後要有空行。</li>
+<li>裡面可以用粗體、清單、程式碼、連結等所有 Markdown 語法。</li>
+<li>手機上會自動變成「原文 → 翻譯 → 原文 → 翻譯」上下交錯。</li>
+<li>頁面上方會有「對照 / 只看原文 / 只看翻譯」三顆切換鈕。</li>
+</ol>
+<h2 id="⚠️-為什麼不能直接用-div">⚠️ 為什麼不能直接用 <code>&lt;div&gt;</code></h2>
+<p>HonKit 的 Markdown 解析器<strong>不會處理 HTML 標籤裡面的 Markdown</strong>。
+直接寫 <code>&lt;div class="dual"&gt;</code> 包住內容，裡面的 <code>**粗體**</code>、段落、清單全部都會變成純文字，
+而且最後一個 <code>&lt;/div&gt;</code> 還會被當成文字印出來。這就是之前卡住的原因。
+用註解標記可以避開這個問題 —— Markdown 先正常解析完，外掛才在事後把註解換成 <code>&lt;div&gt;</code>。</p>
 
                                 
                                 </section>
@@ -335,12 +326,12 @@
 
             
                 
-                <a href="../AI研究/Gemini介紹.html" class="navigation navigation-prev " aria-label="Previous page: Gemini介紹">
+                <a href="../模板/AI整理規則.html" class="navigation navigation-prev " aria-label="Previous page: AI 整理規則">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="雙欄翻譯模板.html" class="navigation navigation-next " aria-label="Next page: 雙欄翻譯模板">
+                <a href="範例對照.html" class="navigation navigation-next " aria-label="Next page: 範例對照">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -351,7 +342,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gemini 對話模板","level":"3.1","depth":1,"next":{"title":"雙欄翻譯模板","level":"3.2","depth":1,"path":"模板/雙欄翻譯模板.md","ref":"模板/雙欄翻譯模板.md","articles":[]},"previous":{"title":"Gemini介紹","level":"2.1","depth":1,"path":"AI研究/Gemini介紹.md","ref":"AI研究/Gemini介紹.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-plus","dual-column"],"styles":{"website":"CSS/style.css"},"pluginsConfig":{"search-plus":{},"dual-column":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"四季","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"翻譯收藏庫","language":"zh-tw","gitbook":"*"},"file":{"path":"模板/Gemini對話模板.md","mtime":"2026-08-06T13:36:57.672Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-08-08T15:36:59.872Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"雙欄語法說明","level":"4.1","depth":1,"next":{"title":"範例對照","level":"4.2","depth":1,"path":"對照閱讀/範例對照.md","ref":"對照閱讀/範例對照.md","articles":[]},"previous":{"title":"AI 整理規則","level":"3.3","depth":1,"path":"模板/AI整理規則.md","ref":"模板/AI整理規則.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-plus","dual-column"],"styles":{"website":"CSS/style.css"},"pluginsConfig":{"search-plus":{},"dual-column":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"四季","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"翻譯收藏庫","language":"zh-tw","gitbook":"*"},"file":{"path":"對照閱讀/如何寫雙欄.md","mtime":"2026-08-08T15:18:24.000Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-08-08T15:36:59.872Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
