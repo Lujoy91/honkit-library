@@ -1,60 +1,75 @@
 (function () {
     function initTranslationMode() {
-        const headings = document.querySelectorAll('h2');
+        const article = document.querySelector('.page-inner');
 
-        let original = null;
-        let translated = null;
+        if (!article) {
+            return;
+        }
+
+        const headings = article.querySelectorAll('h2');
+
+        let originalHeading = null;
+        let translatedHeading = null;
 
         headings.forEach(function (heading) {
             const text = heading.textContent.trim();
 
             if (text.includes('原文')) {
-                original = heading;
+                originalHeading = heading;
             }
 
             if (text.includes('翻譯')) {
-                translated = heading;
+                translatedHeading = heading;
             }
         });
 
-        if (!original || !translated) {
+        if (!originalHeading || !translatedHeading) {
             return;
         }
 
-        if (document.querySelector('.translation-buttons')) {
+        if (article.querySelector('.translation-container')) {
             return;
         }
 
-        const originalContent = document.createElement('div');
-        originalContent.className = 'translation-original';
+        const originalBox = document.createElement('div');
+        originalBox.className = 'translation-original';
 
-        const translatedContent = document.createElement('div');
-        translatedContent.className = 'translation-translated';
+        const translatedBox = document.createElement('div');
+        translatedBox.className = 'translation-translated';
 
-        let current = original.nextElementSibling;
+        let node = originalHeading;
 
-        while (current && current !== translated) {
-            const next = current.nextElementSibling;
-            originalContent.appendChild(current);
-            current = next;
+        while (node && node !== translatedHeading) {
+            const next = node.nextElementSibling;
+
+            originalBox.appendChild(node);
+
+            if (next === translatedHeading) {
+                break;
+            }
+
+            if (next) {
+                originalBox.appendChild(next);
+            }
+
+            node = next;
         }
 
-        current = translated.nextElementSibling;
+        node = translatedHeading;
 
-        while (current) {
-            const next = current.nextElementSibling;
-            translatedContent.appendChild(current);
-            current = next;
+        while (node) {
+            const next = node.nextElementSibling;
+
+            translatedBox.appendChild(node);
+
+            node = next;
         }
-
-        original.remove();
-        translated.remove();
 
         const container = document.createElement('div');
         container.className = 'translation-container show-both';
 
-        container.appendChild(originalContent);
-        container.appendChild(translatedContent);
+        container.appendChild(originalBox);
+        container.appendChild(translatedBox);
 
         const buttons = document.createElement('div');
         buttons.className = 'translation-buttons';
@@ -85,11 +100,9 @@
 
                 container.classList.add(mode[1]);
 
-                buttons
-                    .querySelectorAll('.translation-button')
-                    .forEach(function (item) {
-                        item.classList.remove('active');
-                    });
+                buttons.querySelectorAll('.translation-button').forEach(function (item) {
+                    item.classList.remove('active');
+                });
 
                 button.classList.add('active');
             });
@@ -97,8 +110,8 @@
             buttons.appendChild(button);
         });
 
-        originalContent.parentNode.insertBefore(buttons, originalContent);
-        originalContent.parentNode.insertBefore(container, buttons.nextSibling);
+        originalHeading.parentNode.insertBefore(buttons, originalHeading);
+        originalHeading.parentNode.insertBefore(container, buttons.nextSibling);
     }
 
     if (document.readyState === 'loading') {
